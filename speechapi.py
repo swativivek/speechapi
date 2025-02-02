@@ -15,13 +15,13 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 CORS(app)
 
-# Load Hugging Face ASR pipeline for speech-to-text
+# Load smaller Hugging Face ASR pipeline for speech-to-text
 logger.info("Loading ASR model...")
-asr_pipeline = pipeline("automatic-speech-recognition", model="facebook/wav2vec2-large-960h")
+asr_pipeline = pipeline("automatic-speech-recognition", model="facebook/wav2vec2-base-960h")
 
-# Load T5 model for grammar correction
+# Load smaller T5 model for grammar correction
 logger.info("Loading T5 model...")
-model_name = "t5-small"
+model_name = "t5-tiny"
 tokenizer = T5Tokenizer.from_pretrained(model_name)
 model = T5ForConditionalGeneration.from_pretrained(model_name)
 
