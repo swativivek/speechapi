@@ -1,2 +1,2 @@
 #!/bin/bash
-gunicorn speechapi:speechapi
+gunicorn speechapi:app
