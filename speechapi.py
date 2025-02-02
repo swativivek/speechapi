@@ -92,4 +92,5 @@ def correct_audio():
 
     return jsonify({"corrected_text": corrected_text})
 
-if __name__
+if __name__ == "__main__":
+    app.run(debug=True)
